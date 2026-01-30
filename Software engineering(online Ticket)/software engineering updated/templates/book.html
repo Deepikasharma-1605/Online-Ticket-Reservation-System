@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Book - {{ event['name'] }}{% endblock %}
+{% block content %}
+  <h1>Book Ticket</h1>
+  <div class="card">
+    <h3>{{ event['name'] }}</h3>
+    <p><strong>Date:</strong> {{ event['date'] }}</p>
+    <p><strong>Location:</strong> {{ event['location'] }}</p>
+    <form method="post">
+      <label>Seat number</label>
+      <input name="seat_no" required>
+      <button class="btn" type="submit">Confirm Booking</button>
+    </form>
+  </div>
+{% endblock %}

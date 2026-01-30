@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - TicketApp{% endblock %}
+{% block content %}
+  <h1>Your Tickets</h1>
+  {% if tickets %}
+    <table class="table">
+      <thead>
+        <tr><th>Event</th><th>Date</th><th>Seat</th><th>Booked At</th></tr>
+      </thead>
+      <tbody>
+        {% for t in tickets %}
+          <tr>
+            <td>{{ t['event_name'] }}</td>
+            <td>{{ t['event_date'] }}</td>
+            <td>{{ t['seat_no'] }}</td>
+            <td>{{ t['booked_at'] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>You have no tickets yet. Browse events and book one!</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Register / Login{% endblock %}
+{% block content %}
+  <div class="split">
+    <div class="card">
+      <h2>Register</h2>
+      <form method="post" action="{{ url_for('register') }}">
+        <label>Username</label>
+        <input name="username" required>
+        <label>Password</label>
+        <input name="password" type="password" required>
+        <button class="btn" type="submit">Register</button>
+      </form>
+      <p class="muted">Registration prints a confirmation link to server console (simulation).</p>
+    </div>
+
+    <div class="card">
+      <h2>Login</h2>
+      <form method="post" action="{{ url_for('login') }}">
+        <label>Username</label>
+        <input name="username" required>
+        <label>Password</label>
+        <input name="password" type="password" required>
+        <button class="btn" type="submit">Login</button>
+      </form>
+      <p class="muted">If you registered, use the confirmation link printed in server logs to confirm first.</p>
+    </div>
+  </div>
+{% endblock %}
